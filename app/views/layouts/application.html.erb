@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="banner">
+  <p class="locale">
+    <!--add language via config/initializer/i18n.rb array LANGUAGES[[language name][language symbol]]-->
+    <% LANGUAGES.each() do |language| %>
+        <%=link_to_unless I18n.locale==language[1].to_sym, language[0], :locale =>language[1] %>
+        <% if language != LANGUAGES.last %>
+        <%= '|' %>
+        <% end %>
+    <% end %>
+    <!--end adding language on the right top-->
+  </p>
+</div>
+
+
+
 
 <%= yield %>
 
