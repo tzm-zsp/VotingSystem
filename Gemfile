@@ -34,14 +34,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# used for rubymine to report test result
+group :test do
+  #if RUBY_PLATFORM =~ /(win32|w32)/
+  #  gem "win32console", '1.3.0'
+  #end
+  gem "minitest"
+  gem "minitest-reporters", '>= 0.5.0'
+end
