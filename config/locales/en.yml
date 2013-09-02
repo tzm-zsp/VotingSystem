@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
   votingsystem: "Voting System"
+
+  en: "English"
+  zh-CN: "简体中文"
