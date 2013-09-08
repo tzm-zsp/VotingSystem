@@ -20,7 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  #view of header
+  new: "New"
+  search: "Search"
 
+  #view of new vote
+  vote_title: "Title"
+  option_type: "Option Type"
+  multi: "Multi"
+  single: "Single"
+  vote_type: "Vote Type"
+  life: "Life"
+  technology: "Technology"
+  education: "Education"
+  options: "options"
+  save: "SAVE"
+  cancel: "CANCEL"
+
+  voting_title: "Voting System"
   votingsystem: "Voting System"
 
   en: "English"

@@ -6,24 +6,16 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div id="banner">
-  <p class="locale">
-    <!--add language via config/initializer/i18n.rb array LANGUAGES[[language name][language symbol]]-->
-    <% LANGUAGES.each() do |language| %>
-        <%= link_to_unless I18n.locale==language.to_sym, t(language), :locale =>language %>
-        <%= '|' unless language == LANGUAGES.last%>
-    <% end %>
-    <!--end adding language on the right top-->
-  </p>
-
-
-</div>
-
-
-
+<body class="main">
+<header>
+  <%= render 'shared/header' %>
+</header>
 
 <%= yield %>
 
+<footer>
+
+</footer>
 </body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </html>

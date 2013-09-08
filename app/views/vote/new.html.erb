@@ -1,0 +1,127 @@
+<div class="new_vote">
+  <%= form_for :vote do |f| %>
+  <div class="new_vote_title">
+    <%= f.label t('vote_title')+':' %>
+    <%= f.text_field :title , :tabIndex=>1%>
+  </div>
+
+  <div class="new_options_type">
+    <%= f.label t('option_type')+':' %>
+    <%= f.radio_button(:option_type,:single,:checked=>true) %>
+    <%= f.label t('single') %>
+    <%= f.radio_button(:option_type,:multi) %>
+    <%= f.label t('multi') %>
+  </div>
+
+
+  <div class="new_vote_type">
+    <%= f.label t('vote_type')+':' %>
+    <%= f.select(:type,[t('life'),t('technology'), t('education')],{},{:tabIndex=>2}) %>
+
+  </div>
+
+  <div class="new_vote_options">
+    <table id="optionsTable">
+      <tr id="option0">
+        <td><%= f.label t('options')+':' %></td>
+        <td>1:</td>
+        <td><%= f.text_field :option0,:tabIndex=>3%></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr id="option1">
+        <td></td>
+        <td>2:</td>
+        <td><%= f.text_field :option1,:tabIndex=>4%></td>
+        <td><input type="button" value="+" id="addbutton"/></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="submit_buttons">
+    <%= f.submit t("save") %>
+    <%= button_tag t('cancel'), :type => 'reset' %>
+
+  </div>
+  <% end %>
+</div>
+<script>
+
+      var count=2;
+      var $options =$("#optionsTable");
+
+      $options.on("click","#addbutton",function(){
+          if (count<12)
+          {
+              //read the i from the addbutton and+1 for the new option div
+              var $id = $(this).parent().parent()[0].id;
+              var clickIndex=parseInt($id.substring(6));
+              var IndexOfTr=clickIndex;
+              var i=clickIndex+1;
+              var optionNo = "vote_option"+i;
+              var optionNam = "vote[option"+i+"]";
+
+              //update the option id input id and name for the next
+              while(clickIndex<(count-1)){
+                   clickIndex++;
+                   var optionId="option"+(clickIndex+1);
+                   var optionNoPlus = "vote_option"+(clickIndex+1);
+                   var optionNamPlus = "vote[option"+(clickIndex+1)+"]";
+                   $("tr").eq(clickIndex).attr('id',optionId);
+                   var $numberCell=$('table tr:eq(' + clickIndex + ') td:eq(1)');
+                  $numberCell.text(clickIndex+2+":");
+
+                  var $textCell= $('table tr:eq(' + clickIndex + ') td:eq(2) input');
+                  $textCell.attr('id',optionNoPlus);
+                  $textCell.attr('name',optionNamPlus);
+              }
+
+              //make out the html and add it after the addbutton
+              var moreOptions="<tr id=option"+i+" ><td></td><td>"+(i+1)+":</td>";
+              moreOptions+="<td><input id="+optionNo+ " name="+optionNam+" type='text'></td>";
+              moreOptions+="<td><input type='button' value='+' id='addbutton'/></td>";
+              moreOptions+="<td><input type='button' value='-' id='delbutton'/></td></tr>";
+
+              $('tr').eq(IndexOfTr).after(moreOptions);
+              count++;
+          }
+          else{
+              alert("no more than 12 options");
+          }
+      });//end on for addbutton
+
+
+
+      $options.on("click","#delbutton",function(){
+
+          //read the i from the delbutton tr
+          var $id = $(this).parent().parent()[0].id;
+          var clickIndex=parseInt($id.substring(6));
+          var IndexofTr=clickIndex;
+            //remove the div of delbutton and the count
+            $("tr").eq(IndexofTr).remove();
+            count--;
+            //update the option id input id and name for the next
+          while(clickIndex<count){
+            clickIndex++;
+            var optionId="option"+(clickIndex-1);
+            var optionNoMin = "vote_option"+(clickIndex-1);
+            var optionNamMin = "vote[option"+(clickIndex-1)+"]";
+            $("tr").eq(clickIndex-1).attr('id',optionId);
+            var $numberCell=$('table tr:eq(' + (clickIndex-1) + ') td:eq(1)');
+            $numberCell.text(clickIndex+":");
+            var $textCell= $('table tr:eq(' + (clickIndex-1) + ') td:eq(2) input');
+            $textCell.attr('id',optionNoMin);
+            $textCell.attr('name',optionNamMin);
+          }
+      });//end on for delbutton
+
+
+        $('a').attr('tabIndex',-1);
+
+
+</script>
+
+

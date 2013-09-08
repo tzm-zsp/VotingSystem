@@ -1,0 +1,28 @@
+// Place all the styles related to the vote controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_vote{
+  margin-top:15px;
+  margin-left: 50px;
+  margin-right:auto;
+}
+
+.new_vote_title, .new_options_type, .new_vote_type, .new_vote_options{
+  margin:5px 5px 5px 5px;
+  background-color: lightgray;
+  width:450px;
+}
+.new_vote_title label, .new_options_type label:first-of-type, .new_vote_type label:first-of-type, .new_vote_options label {
+  width:90px;
+  display: inline-block;
+  background-color: lemonchiffon;
+}
+
+tr td:first-child{
+  background-color: lemonchiffon;
+}
+
+div.submit_buttons {
+  margin-left: 95px;
+}

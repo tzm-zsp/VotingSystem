@@ -12,7 +12,56 @@
  *= require_tree .
  */
 
+/*make the main body to center*/
+body{
+    width:1003px;
+    margin-top:0px;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 5px;
+    border: 3px dotted gray;
+}
+
+/*style the header bar*/
+#banner{
+    overflow: hidden;
+    background-color: lightgoldenrodyellow;
+    border-bottom: 2px solid bisque;
+    color:coral;
+}
+
+#banner a {
+    text-decoration: none;
+    color:coral;
+}
+
+.logo{
+    float:left;
+    width: 33.3%;
+}
+
+.search_bar{
+    float: left;
+    padding-top: 5px;
+}
+
+#search_text{
+    width:250px;
+}
+
+#search{
+    width:50px;
+}
+
+
 .locale{
     float: right;
-    margin: -0.25em 0.1em;
+    margin: 5px 5px 0px 0px;
 }
+
+.locale a{
+    color:chartreuse;
+}
+
+
+

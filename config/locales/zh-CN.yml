@@ -1,4 +1,20 @@
 zh-CN:
+  new: "新建"
+  search: "搜索"
+
+  vote_title: "投票标题"
+  option_type: "选项类型"
+  multi: "多项选择"
+  single: "单项选择"
+  vote_type: "投票类别"
+  life: "生活"
+  technology: "技术"
+  education: "教育"
+  options: "选项"
+  save: "保存"
+  cancel: "取消"
+
+  voting_title: "投票系统"
   votingsystem: "投票系统"
 
   en: "English"

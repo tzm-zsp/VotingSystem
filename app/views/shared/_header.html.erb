@@ -1,0 +1,23 @@
+<div id="banner">
+    <div class="logo">
+      <!--add a title/logo to return to the root path-->
+      <%= link_to (t('voting_title')), root_path %>
+    </div>
+
+    <div class="search_bar">
+      <%= text_field_tag('search_text') %>
+      <%= button_tag t ('search')%>
+
+      <!--add a link to the new action in the vote_controller-->
+      <%= link_to t('new'), :controller =>:vote,:action=> :new%>
+    </div>
+
+     <div class="locale">
+        <!--add language via config/initializer/i18n.rb array LANGUAGES[[language name][language symbol]]-->
+        <% LANGUAGES.each() do |language| %>
+        <%= link_to_unless I18n.locale==language.to_sym, t(language), :locale =>language %>
+        <%= '|' unless language == LANGUAGES.last%>
+        <% end %>
+        <!--end adding language on the right top-->
+     </div>
+</div>
