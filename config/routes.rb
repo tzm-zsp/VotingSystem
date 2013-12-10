@@ -1,5 +1,6 @@
 VotingSystem::Application.routes.draw do
   get "vote/new"
+  post 'vote/create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

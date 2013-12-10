@@ -1,5 +1,5 @@
 <div class="new_vote">
-  <%= form_for :vote do |f| %>
+  <%= form_for :vote, url: { action: "create" } do |f| %>
   <div class="new_vote_title">
     <%= f.label t('vote_title')+':' %>
     <%= f.text_field :title , :tabIndex=>1%>

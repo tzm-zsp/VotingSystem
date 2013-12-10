@@ -11,6 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130911045434) do
+
+  create_table "options", force: true do |t|
+    t.string  "name",       null: false
+    t.integer "vote_count"
+    t.integer "topic_id"
+  end
+
+  add_index "options", ["topic_id"], name: "index_options_on_topic_id", using: :btree
+
+  create_table "topics", force: true do |t|
+    t.datetime "created_at"
+    t.text     "name",                              null: false
+    t.string   "ip"
+    t.integer  "category",    limit: 1
+    t.integer  "option_type", limit: 1, default: 0, null: false
+  end
 
 end

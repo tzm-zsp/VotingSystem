@@ -34,11 +34,20 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# used for rubymine to report test result
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 group :test do
+  # used for rubymine to report test result
   #if RUBY_PLATFORM =~ /(win32|w32)/
   #  gem "win32console", '1.3.0'
   #end
   gem "minitest"
   gem "minitest-reporters", '>= 0.5.0'
+
+  # for cucumber test
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  #gem 'database_cleaner'    not support on ruby 1.9.3
 end
