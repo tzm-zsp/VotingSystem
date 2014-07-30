@@ -23,17 +23,17 @@ development:
 test:
   adapter: postgresql
   encoding: utf8
-  database: votingsystem_test
+  database: vs_test
   pool: 5
-  username: postgres
-  password: t
+  username: test
+  password: test
     #  socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: postgresql
   encoding: utf8
-  database: votingsystem_production
+  database: vs_production
   pool: 5
-  username: postgres 
-  password: t
-    #  socket: /var/run/mysqld/mysqld.sock
+  username: pro 
+  password: pro
+  #  socket: /var/run/mysqld/mysqld.sock
