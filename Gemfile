@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use mysql as the database for Active Record
-gem 'mysql2'
+# Use postgresql as the database for Active Record
+gem 'pg'
 
 gem 'rails-i18n', '~> 4.0.0.pre'
 
@@ -51,3 +51,5 @@ group :test do
   # database_cleaner is not required, but highly recommended
   #gem 'database_cleaner'    not support on ruby 1.9.3
 end
+
+gem 'rails_12factor', group: :production

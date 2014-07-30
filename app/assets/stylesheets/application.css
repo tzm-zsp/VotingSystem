@@ -14,25 +14,25 @@
 
 /*make the main body to center*/
 body{
-    width:1003px;
+    /*width:1003px;*/
     margin-top:0px;
     margin-left:auto;
     margin-right: auto;
     padding: 5px;
-    border: 3px dotted gray;
+    /*border: 3px dotted gray;*/
 }
 
 /*style the header bar*/
 #banner{
     overflow: hidden;
-    background-color: lightgoldenrodyellow;
-    border-bottom: 2px solid bisque;
-    color:coral;
+    /*background-color: cornsilk;*/
+    /*border-bottom: 2px solid bisque;*/
+    color:#336699;
 }
 
 #banner a {
     text-decoration: none;
-    color:coral;
+    color: black;
 }
 
 .logo{
@@ -60,7 +60,7 @@ body{
 }
 
 .locale a{
-    color:chartreuse;
+    color: black;
 }
 
 

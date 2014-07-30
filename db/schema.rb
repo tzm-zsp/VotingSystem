@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20130911045434) do
     t.datetime "created_at"
     t.text     "name",                              null: false
     t.string   "ip"
-    t.integer  "category",    limit: 1
-    t.integer  "option_type", limit: 1, default: 0, null: false
+    t.integer  "category",    limit: 2
+    t.integer  "option_type", limit: 2, default: 0, null: false
   end
 
 end
